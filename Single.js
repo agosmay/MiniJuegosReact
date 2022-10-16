@@ -28,6 +28,13 @@ export const Single = () => {
 	}
 	
 	
+	const borrar = (id) => {
+		setLista(lista.filter((i)=> (
+			i.id!==id
+		)))
+		
+	}
+	
 	return (
 		<>
 			<h1>Este es single</h1>
@@ -38,7 +45,12 @@ export const Single = () => {
 			<div>
 			{
 				lista.map((i)=> (
-					<li key={i.id}>{i.tarea}</li>
+					<MostrarSingle 
+					key={i.id}
+					id={i.id}
+					tarea={i.tarea}
+					borrar={borrar}
+					/>
 				
 				))
 			}
